@@ -104,8 +104,7 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
+ol ul {
   list-style: none;
 }
 blockquote,
@@ -388,12 +387,209 @@ a:focus {
 .content-container {
   display: grid;
   grid-template-columns: 7fr 3fr;
+  font-family: "Georgia", sans-serif;
+  margin-bottom: 3em;
+  border-bottom: 1px solid #333;
+}
+
+figcaption {
+  font-size: 9px;
+  color: #666;
+  text-align: right;
+  padding-top: 0.5rem;
+  font-family: "Helvetica", sans-serif;
 }
 
 .content-container .left {
-  background-color: red;
+  padding-right: 1em;
 }
 
 .content-container .right {
-  background-color: aqua;
+  padding-left: 1em;
+  border-left: 1px solid #e2e2e2;
+  margin-top: 1em;
+}
+
+.left .multiple-article-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0 1em 0;
+  border-bottom: 1px solid #333;
+}
+
+.left .brief-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 35%;
+}
+
+.article-img {
+  width: 65%;
+  padding-left: 1em;
+  overflow: hidden;
+}
+
+.article-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.left .brief {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  line-height: 1.2;
+  padding-bottom: 1em;
+}
+
+.left .brief:not(:last-child) {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.left .brief:nth-child(1) .brief-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.left .brief:nth-child(2) .brief-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.left .brief:nth-child(3) .brief-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.left .brief-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.read-time {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Helvetica", sans-serif;
+  color: #333;
+}
+
+.left .article-normal {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0 2em 0;
+  border-bottom: 1px solid #333;
+}
+
+.left .article-normal:last-child {
+  border-bottom: 0;
+}
+
+.left .article-content {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.left .article-normal .article-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.left .article-normal .article-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.right .multiple-article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-bottom: 1px solid #333;
+}
+
+.right .multiple-article-container .main {
+  grid-area: 1 / 1 / 3 / 3;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.right .main .article-title {
+  font-size: 22px;
+}
+
+.right .main .article-img {
+  width: 100%;
+  padding: 0;
+  padding-bottom: 1em;
+}
+
+.right .main .article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  line-height: 1.2;
+}
+
+.right .article-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.right .multiple-article-container .secondary-left {
+  grid-area: 3 / 1 / 4 / 2;
+  padding-right: 1em;
+  border-right: 1px solid #e2e2e2;
+}
+
+.right .multiple-article-container .secondary-right {
+  grid-area: 3 / 2 / 4 / 3;
+  padding-left: 1em;
+}
+
+.right .multiple-article-container .secondary {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.right .multiple-article-container .secondary .article-img {
+  width: 100%;
+  padding: 0;
+}
+
+.right .multiple-article-container .secondary .article-img img {
+  object-fit: cover;
+}
+
+.right .article-normal {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0;
+  gap: 1em;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.right .article-normal .article-title {
+  font-weight: 600;
+}
+
+.right .article-normal .article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.right .article-normal .article-img {
+  aspect-ratio: 1;
+  height: auto;
+  padding-left: 0;
 }
